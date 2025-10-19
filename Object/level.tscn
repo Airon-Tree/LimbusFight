@@ -557,7 +557,7 @@ size = Vector2(53, 187)
 size = Vector2(60, 204)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uxom"]
-bg_color = Color(0.37, 0.37, 0.37, 1)
+bg_color = Color(0, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jpr5"]
@@ -612,8 +612,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 27.0
 offset_top = 16.0
-offset_right = 247.0
-offset_bottom = 40.0
+offset_right = 350.0
+offset_bottom = 56.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(12, 12)
 script = ExtResource("6_8uxom")
@@ -625,8 +625,8 @@ z_index = 5
 layout_mode = 0
 offset_left = 15.0
 offset_top = 8.0
-offset_right = 235.0
-offset_bottom = 28.0
+offset_right = 337.0
+offset_bottom = 42.5
 scale = Vector2(2, 2)
 theme_override_styles/background = SubResource("StyleBoxFlat_8uxom")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1jpr5")
@@ -635,10 +635,11 @@ show_percentage = false
 [node name="GameOverLabel" type="Label" parent="UI/HealthUI"]
 z_index = 5
 layout_mode = 0
-offset_left = 267.5
-offset_top = 174.5
-offset_right = 363.5
-offset_bottom = 197.5
-text = "Game Over!!"
+offset_left = 248.5
+offset_top = 165.0
+offset_right = 385.5
+offset_bottom = 214.0
+text = "Game Over!!
+Press R to Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
