@@ -15,11 +15,14 @@ func exit(new_state: State = null) -> void:
 	player.velocity.x =0.0
 
 func process_input(event: InputEvent) -> State:
+	if event.is_action_pressed(jump_attack_key): 
+		return jump_attack_state
 	super(event)
 	if event.is_action_pressed(movement_key): 
 		determine_sprite_flipped(event.as_text())
 	if event.is_action_released(jump_key):
 		player.velocity.y = 0
+
 
 	return null
 

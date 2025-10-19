@@ -633,6 +633,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_1jpr5")
 show_percentage = false
 
 [node name="GameOverLabel" type="Label" parent="UI/HealthUI"]
+visible = false
 z_index = 5
 layout_mode = 0
 offset_left = 248.5

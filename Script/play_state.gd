@@ -13,6 +13,7 @@ var fall_anim: String = "Fall"
 var punch_anim: String = "Punch"
 var kick_anim: String = "Kick"
 var pain_anim: String = "Pain"
+var jump_attack_anim: String = "Jump_Attack"
 
 #States
 @export_group("States")
@@ -23,6 +24,7 @@ var pain_anim: String = "Pain"
 @export var punch_state: PlayerState
 @export var kick_state: PlayerState
 @export var pain_state: PlayerState
+@export var jump_attack_state: PlayerState
 
 #State Variables
 var sprite_flipped: bool = false
@@ -34,6 +36,7 @@ var right_key: String = "Right"
 var jump_key: String = "Jump"
 var punch_key: String = "Punch"
 var kick_key: String = "Kick"
+var jump_attack_key: String = "Kick"
 
 #Input Action
 var left_actions: Array = InputMap.action_get_events(left_key).map(func(action: InputEvent) -> String: 
