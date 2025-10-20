@@ -2,7 +2,7 @@ class_name PlayerJumpState
 extends PlayerState
 
 const AIR_SPEED: float = 80
-const JUMP_FORCE: float = 400
+const JUMP_FORCE: float = 300
 
 
 func enter() -> void:

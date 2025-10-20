@@ -1,0 +1,735 @@
+[gd_scene load_steps=62 format=3 uid="uid://uyka7125q2uo"]
+
+[ext_resource type="Script" uid="uid://cjkoll2j67i7h" path="res://Script/player.gd" id="1_brci8"]
+[ext_resource type="Texture2D" uid="uid://cybaxdck1ljnb" path="res://Sprite/Brawler-Girl/Idle/idle1.png" id="2_26veg"]
+[ext_resource type="Texture2D" uid="uid://cfoye2y2uj46i" path="res://Sprite/Brawler-Girl/Idle/idle2.png" id="3_unu07"]
+[ext_resource type="Texture2D" uid="uid://b6vl4odeetce2" path="res://Sprite/Brawler-Girl/Idle/idle3.png" id="4_kvn3i"]
+[ext_resource type="Texture2D" uid="uid://csas7k82g28lu" path="res://Sprite/Brawler-Girl/Idle/idle4.png" id="5_0kbee"]
+[ext_resource type="Texture2D" uid="uid://mddo7aecdw6q" path="res://Assets/Sprites/Brawler-Girl/Jump/jump1.png" id="6_kcq3n"]
+[ext_resource type="Texture2D" uid="uid://b7fohncute15s" path="res://Assets/Sprites/Brawler-Girl/Jump/jump2.png" id="7_k78co"]
+[ext_resource type="Texture2D" uid="uid://hqmrre3a1vad" path="res://Assets/Sprites/Brawler-Girl/Jump/jump3.png" id="8_8hkdv"]
+[ext_resource type="Texture2D" uid="uid://f051kbl433eq" path="res://Assets/Sprites/Brawler-Girl/Jump/jump4.png" id="9_bm01t"]
+[ext_resource type="Texture2D" uid="uid://dbe6xiea0cags" path="res://Assets/Sprites/Brawler-Girl/Jump_kick/jump_kick1.png" id="10_iyr4i"]
+[ext_resource type="Texture2D" uid="uid://qieinhldhwbl" path="res://Assets/Sprites/Brawler-Girl/Jump_kick/jump_kick2.png" id="11_pskqe"]
+[ext_resource type="Texture2D" uid="uid://cwdvrodtdiumb" path="res://Assets/Sprites/Brawler-Girl/Jump_kick/jump_kick3.png" id="12_xffiw"]
+[ext_resource type="Texture2D" uid="uid://crmbmxtkebn2r" path="res://Assets/Sprites/Brawler-Girl/Kick/kick1.png" id="13_utcio"]
+[ext_resource type="Texture2D" uid="uid://dsud4tc8vtsoi" path="res://Assets/Sprites/Brawler-Girl/Kick/kick2.png" id="14_xio6w"]
+[ext_resource type="Texture2D" uid="uid://bpx4dd460pgpf" path="res://Assets/Sprites/Brawler-Girl/Kick/kick3.png" id="15_r6vcg"]
+[ext_resource type="Texture2D" uid="uid://gwywo65rjkoe" path="res://Assets/Sprites/Brawler-Girl/Kick/kick4.png" id="16_ms8dq"]
+[ext_resource type="Texture2D" uid="uid://cl54ba4s65n4t" path="res://Assets/Sprites/Brawler-Girl/Kick/kick5.png" id="17_fs7by"]
+[ext_resource type="Texture2D" uid="uid://cc8wm0gyu4uad" path="res://Assets/Sprites/Brawler-Girl/Hurt/hurt1.png" id="18_73c6d"]
+[ext_resource type="Texture2D" uid="uid://d4v3wnikaw5a" path="res://Assets/Sprites/Brawler-Girl/Hurt/hurt2.png" id="19_kgcsq"]
+[ext_resource type="Texture2D" uid="uid://c1xnmxgpssjx7" path="res://Assets/Sprites/Brawler-Girl/Punch/punch1.png" id="20_bdwff"]
+[ext_resource type="Texture2D" uid="uid://bevh8sv43wdm8" path="res://Assets/Sprites/Brawler-Girl/Punch/punch2.png" id="21_ufk36"]
+[ext_resource type="Texture2D" uid="uid://de715i1c80nbm" path="res://Assets/Sprites/Brawler-Girl/Punch/punch3.png" id="22_cr484"]
+[ext_resource type="Texture2D" uid="uid://cwcuibbdr6cmw" path="res://Sprite/Brawler-Girl/Walk/walk1.png" id="23_n1u7l"]
+[ext_resource type="Texture2D" uid="uid://bqq8pk0lcvjuf" path="res://Sprite/Brawler-Girl/Walk/walk2.png" id="24_l80uu"]
+[ext_resource type="Texture2D" uid="uid://md7syyru1ssq" path="res://Sprite/Brawler-Girl/Walk/walk3.png" id="25_5h1v0"]
+[ext_resource type="Texture2D" uid="uid://btcoexhb0m0a1" path="res://Sprite/Brawler-Girl/Walk/walk4.png" id="26_8sxoa"]
+[ext_resource type="Texture2D" uid="uid://b55hoai34lif5" path="res://Sprite/Brawler-Girl/Walk/walk5.png" id="27_7wk7b"]
+[ext_resource type="Texture2D" uid="uid://c54nrub2h0p67" path="res://Sprite/Brawler-Girl/Walk/walk6.png" id="28_71s6q"]
+[ext_resource type="Texture2D" uid="uid://c6xhpep0ta2kk" path="res://Sprite/Brawler-Girl/Walk/walk7.png" id="29_whvo4"]
+[ext_resource type="Texture2D" uid="uid://c1ullmvta8ei1" path="res://Sprite/Brawler-Girl/Walk/walk8.png" id="30_7cb8e"]
+[ext_resource type="Texture2D" uid="uid://dj1d1xmgwc8v6" path="res://Sprite/Brawler-Girl/Walk/walk9.png" id="31_pb4wm"]
+[ext_resource type="Texture2D" uid="uid://b01208vl4nooq" path="res://Sprite/Brawler-Girl/Walk/walk10.png" id="32_03qt3"]
+[ext_resource type="Script" uid="uid://bxhpgh2bl1e1s" path="res://Script/state_machine.gd" id="33_hlmck"]
+[ext_resource type="Script" uid="uid://b711m7suuyf6y" path="res://Script/idle.gd" id="34_6djdp"]
+[ext_resource type="Script" uid="uid://cmgvtd3uev5jv" path="res://Script/walk.gd" id="35_0xqq1"]
+[ext_resource type="Script" uid="uid://bp3odxd3gjw45" path="res://Script/jump.gd" id="36_r7o0y"]
+[ext_resource type="Script" uid="uid://dt8v6ahq3qrr1" path="res://Script/fall.gd" id="37_sxntl"]
+[ext_resource type="Script" uid="uid://cw4upix1kfte6" path="res://Script/punch.gd" id="38_74wac"]
+[ext_resource type="Script" uid="uid://dxqxuq7qquk3l" path="res://Script/hit_box.gd" id="39_2geuy"]
+[ext_resource type="Script" uid="uid://cgv60r8xo1uyb" path="res://Script/kick.gd" id="40_ahp4d"]
+[ext_resource type="Script" uid="uid://rvsjcuwkkih1" path="res://Script/pain.gd" id="41_5qbao"]
+[ext_resource type="Script" uid="uid://dy5ge8iavn6oa" path="res://Script/player_hurt_box.gd" id="42_kxth6"]
+[ext_resource type="Script" uid="uid://c4s3yi4myu7ri" path="res://Script/jump_attack.gd" id="43_v5yw8"]
+[ext_resource type="Script" uid="uid://t6ewqd7gxq2o" path="res://Script/player_health.gd" id="44_pl13k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1feqs"]
+atlas = ExtResource("2_26veg")
+region = Rect2(0, 0, 96, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gywo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1feqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_unu07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kvn3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0kbee")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_kcq3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k78co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8hkdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bm01t")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_iyr4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pskqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xffiw")
+}],
+"loop": true,
+"name": &"Jump_Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_utcio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xio6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r6vcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ms8dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fs7by")
+}],
+"loop": true,
+"name": &"Kick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_73c6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kgcsq")
+}],
+"loop": true,
+"name": &"Pain",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_bdwff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ufk36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cr484")
+}],
+"loop": true,
+"name": &"Punch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_n1u7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_l80uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5h1v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8sxoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7wk7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_71s6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_whvo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7cb8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_pb4wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_03qt3")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3hdpa"]
+resource_name = "Fall"
+length = 0.20002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_ayjcg"]
+resource_name = "Idle"
+length = 0.80002004
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.20292822, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_jtreb"]
+resource_name = "Jump"
+length = 0.80002004
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_bv0lr"]
+resource_name = "Kick"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Kick"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../State Machine/Kick/HitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.60186666, 0.992373),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../State Machine/Kick")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"add_game_juice"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_83teh"]
+resource_name = "Pain"
+length = 0.40002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Pain"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../State Machine/Pain")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"add_game_juice"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_683uq"]
+resource_name = "Punch"
+length = 0.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Punch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../State Machine/Punch/HitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.19946921, 0.4760724),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../State Machine/Punch")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"add_game_juice"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_clfxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../State Machine/Punch/HitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../State Machine/Kick/HitBox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../State Machine/JumpAttack/HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_0saxi"]
+resource_name = "Walk"
+length = 1.80002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.7978871),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_h3tbx"]
+resource_name = "Jump_Attack"
+length = 0.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump_Attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../State Machine/JumpAttack/HitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0saxi"]
+_data = {
+&"Fall": SubResource("Animation_3hdpa"),
+&"Idle": SubResource("Animation_ayjcg"),
+&"Jump": SubResource("Animation_jtreb"),
+&"Jump_Attack": SubResource("Animation_h3tbx"),
+&"Kick": SubResource("Animation_bv0lr"),
+&"Pain": SubResource("Animation_83teh"),
+&"Punch": SubResource("Animation_683uq"),
+&"RESET": SubResource("Animation_clfxu"),
+&"Walk": SubResource("Animation_0saxi")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojw4e"]
+size = Vector2(23, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eghj2"]
+size = Vector2(21, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emg2k"]
+size = Vector2(23, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83teh"]
+size = Vector2(17, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8amrj"]
+size = Vector2(22.5, 47)
+
+[node name="Player2" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_brci8")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5gywo")
+animation = &"Idle"
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_0saxi")
+}
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_ojw4e")
+
+[node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("33_hlmck")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("34_6djdp")
+idle_state = NodePath(".")
+walk_state = NodePath("../Walk")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+punch_state = NodePath("../Punch")
+kick_state = NodePath("../Kick")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="Walk" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("35_0xqq1")
+idle_state = NodePath("../Idle")
+walk_state = NodePath(".")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+punch_state = NodePath("../Punch")
+kick_state = NodePath("../Kick")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="Jump" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("36_r7o0y")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+jump_state = NodePath(".")
+fall_state = NodePath("../Fall")
+punch_state = NodePath("../Punch")
+kick_state = NodePath("../Kick")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="Fall" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("37_sxntl")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+jump_state = NodePath("../Jump")
+fall_state = NodePath(".")
+punch_state = NodePath("../Punch")
+kick_state = NodePath("../Kick")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="Punch" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("38_74wac")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+punch_state = NodePath(".")
+kick_state = NodePath("../Kick")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="HitBox" type="Area2D" parent="State Machine/Punch"]
+script = ExtResource("39_2geuy")
+metadata/_custom_type_script = "uid://dxqxuq7qquk3l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="State Machine/Punch/HitBox"]
+position = Vector2(27.5, -1)
+shape = SubResource("RectangleShape2D_eghj2")
+disabled = true
+debug_color = Color(0.71109694, 0.4801461, 0.20864624, 0.41960785)
+
+[node name="Kick" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("40_ahp4d")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+punch_state = NodePath("../Punch")
+kick_state = NodePath(".")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="HitBox" type="Area2D" parent="State Machine/Kick"]
+script = ExtResource("39_2geuy")
+damage = 20
+metadata/_custom_type_script = "uid://dxqxuq7qquk3l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="State Machine/Kick/HitBox"]
+position = Vector2(22.5, 1.5)
+shape = SubResource("RectangleShape2D_emg2k")
+disabled = true
+debug_color = Color(0.31575865, 0.62129045, 0.22571164, 0.41960785)
+
+[node name="Pain" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("41_5qbao")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+punch_state = NodePath("../Punch")
+kick_state = NodePath("../Kick")
+pain_state = NodePath(".")
+jump_attack_state = NodePath("../JumpAttack")
+
+[node name="HurtBox" type="Area2D" parent="State Machine/Pain"]
+script = ExtResource("42_kxth6")
+metadata/_custom_type_script = "uid://dmn0a1hn5i3bv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="State Machine/Pain/HurtBox"]
+position = Vector2(-1.5, 8)
+shape = SubResource("RectangleShape2D_83teh")
+debug_color = Color(0.9486576, 0.15688309, 0.42360672, 0.41960785)
+
+[node name="JumpAttack" type="Node2D" parent="State Machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "punch_state", "kick_state", "pain_state", "jump_attack_state")]
+script = ExtResource("43_v5yw8")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+punch_state = NodePath("../Punch")
+kick_state = NodePath("../Kick")
+pain_state = NodePath("../Pain")
+jump_attack_state = NodePath(".")
+metadata/_custom_type_script = "uid://c4s3yi4myu7ri"
+
+[node name="HitBox" type="Area2D" parent="State Machine/JumpAttack"]
+script = ExtResource("39_2geuy")
+metadata/_custom_type_script = "uid://dxqxuq7qquk3l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="State Machine/JumpAttack/HitBox"]
+position = Vector2(19, 1)
+shape = SubResource("RectangleShape2D_8amrj")
+disabled = true
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("44_pl13k")

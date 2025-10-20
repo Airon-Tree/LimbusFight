@@ -1,7 +1,8 @@
 class_name PlayerState
 extends State
 
-@onready var player: Player = get_tree().get_first_node_in_group("Player")
+#@onready var player: Player = get_tree().get_first_node_in_group("Player")
+@onready var player = get_parent().get_parent()
 @onready var camera: Camera = get_tree().get_first_node_in_group("Camera")
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity", -9.8)
@@ -30,13 +31,22 @@ var jump_attack_anim: String = "Jump_Attack"
 var sprite_flipped: bool = false
 
 #Input Key
-var movement_key: String = "Movement"
-var left_key: String = "Left"
-var right_key: String = "Right"
-var jump_key: String = "Jump"
-var punch_key: String = "Punch"
-var kick_key: String = "Kick"
-var jump_attack_key: String = "Kick"
+@export var movement_key: String = "Movement"
+@export var left_key: String = "Left"
+@export var right_key: String = "Right"
+@export var jump_key: String = "Jump"
+@export var punch_key: String = "Punch"
+@export var kick_key: String = "Kick"
+@export var jump_attack_key: String = "Kick"
+
+#For play2
+#var movement_key: String = "Movement_p2"
+#var left_key: String = "Left_p2"
+#var right_key: String = "Right_p2"
+#var jump_key: String = "Jump_p2"
+#var punch_key: String = "Punch_p2"
+#var kick_key: String = "Kick_p2"
+#var jump_attack_key: String = "Kick_p2"
 
 #Input Action
 var left_actions: Array = InputMap.action_get_events(left_key).map(func(action: InputEvent) -> String: 
@@ -47,9 +57,21 @@ var right_actions: Array = InputMap.action_get_events(right_key).map(func(action
 #Util Fn
 func determine_sprite_flipped(event_text: String) -> void:
 	#print(event_text)
-	if left_actions.find(event_text) != -1: 
+	#print(left_actions)
+	#print(right_actions)
+	#print(left_key)
+	#print(right_key)
+	#if event_text == left_key or event_text.find(left_key) != -1:
+		#sprite_flipped = true
+	#elif event_text == right_key or event_text.find(right_key) != -1:
+		#sprite_flipped = false
+	#if left_actions.find(event_text) != -1: 
+		#sprite_flipped = true
+	#elif right_actions.find(event_text) != -1: 
+		#sprite_flipped = false
+	if Input.is_action_pressed(left_key):
 		sprite_flipped = true
-	elif right_actions.find(event_text) != -1: 
+	elif Input.is_action_pressed(right_key):
 		sprite_flipped = false
 	player.sprite.flip_h = sprite_flipped
 

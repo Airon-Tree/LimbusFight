@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://crwf0celejmw4"]
+
+[ext_resource type="PackedScene" uid="uid://ppkllmq1o051" path="res://Object/Player.tscn" id="1_0qk3f"]
+
+[node name="Player" instance=ExtResource("1_0qk3f")]
+
+[node name="Idle" parent="State Machine" index="0"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="Walk" parent="State Machine" index="1"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="Jump" parent="State Machine" index="2"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="Fall" parent="State Machine" index="3"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="Punch" parent="State Machine" index="4"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="Kick" parent="State Machine" index="5"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="Pain" parent="State Machine" index="6"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"
+
+[node name="JumpAttack" parent="State Machine" index="7"]
+movement_key = "Movement_p2"
+left_key = "Left_p2"
+right_key = "Right_p2"
+jump_key = "Jump_p2"
+punch_key = "Punch_p2"
+kick_key = "Kick_p2"
+jump_attack_key = "Kick_p2"

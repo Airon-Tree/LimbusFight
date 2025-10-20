@@ -7,7 +7,6 @@ const JUMP_FORCE: float = 80
 
 func enter() -> void:
 	super()
-	# print("fall")
 	# player.velocity.y = JUMP_FORCE
 	player.animation.play(fall_anim, -1, 2)
 	

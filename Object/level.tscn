@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://70286mk2munl"]
+[gd_scene load_steps=10 format=3 uid="uid://70286mk2munl"]
 
 [ext_resource type="Texture2D" uid="uid://dnojohbbp06rg" path="res://Assets/Stage Layers/tileset.png" id="1_xfdvs"]
 [ext_resource type="Script" uid="uid://dr0mn8100qras" path="res://Script/camera_2d.gd" id="2_4wuqx"]
 [ext_resource type="PackedScene" uid="uid://ppkllmq1o051" path="res://Object/Player.tscn" id="2_jvc7w"]
-[ext_resource type="Script" uid="uid://dmn0a1hn5i3bv" path="res://Script/hurt_box.gd" id="3_jvc7w"]
-[ext_resource type="Script" uid="uid://dxqxuq7qquk3l" path="res://Script/hit_box.gd" id="5_ppfpo"]
+[ext_resource type="PackedScene" uid="uid://crwf0celejmw4" path="res://Object/Player2.tscn" id="4_ppfpo"]
 [ext_resource type="Script" uid="uid://bkgl6hcltt42h" path="res://Script/health_bar_ui.gd" id="6_8uxom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wuqx"]
@@ -550,12 +549,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_4wuqx")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wuqx"]
-size = Vector2(53, 187)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uxom"]
-size = Vector2(60, 204)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uxom"]
 bg_color = Color(0, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
@@ -582,25 +575,11 @@ layer_3/z_index = -2
 zoom = Vector2(3, 3)
 script = ExtResource("2_4wuqx")
 
-[node name="Player" parent="." instance=ExtResource("2_jvc7w")]
+[node name="Player1" parent="." instance=ExtResource("2_jvc7w")]
+position = Vector2(-147, 0)
 
-[node name="HurtBox" type="Area2D" parent="."]
-script = ExtResource("3_jvc7w")
-metadata/_custom_type_script = "uid://dmn0a1hn5i3bv"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(74.5, 32.5)
-shape = SubResource("RectangleShape2D_4wuqx")
-debug_color = Color(0.051525198, 0, 0.80549514, 0.41960785)
-
-[node name="HitBox" type="Area2D" parent="."]
-script = ExtResource("5_ppfpo")
-metadata/_custom_type_script = "uid://dxqxuq7qquk3l"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(-100, 19)
-shape = SubResource("RectangleShape2D_8uxom")
-debug_color = Color(0.97491735, 0.1603266, 0, 0.41960785)
+[node name="Player2" parent="." instance=ExtResource("4_ppfpo")]
+position = Vector2(134, 6)
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 3
@@ -617,7 +596,7 @@ offset_bottom = 56.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(12, 12)
 script = ExtResource("6_8uxom")
-player_path = NodePath("../../Player")
+player_path = NodePath("../../Player1")
 
 [node name="HealthBar" type="ProgressBar" parent="UI/HealthUI"]
 top_level = true
