@@ -17,7 +17,7 @@ func enter() -> void:
 	else: hitbox.scale.x = 1
 	
 	player.animation.play(jump_attack_anim)
-	_set_hitbox_enabled(false)
+	#_set_hitbox_enabled(false)
 	player.animation.animation_finished.connect(func(_anim): has_attacked = true)
 
 func exit(new_state: State = null) -> void:
@@ -46,6 +46,12 @@ func process_physics(delta: float) -> State:
 	player.velocity.y += gravity * delta * 0.9
 	player.move_and_slide()
 
+	return null
+	
+func process_frame(delta: float) -> State:
+	super(delta)
+	if has_attacked:
+		return fall_state
 	return null
 
 func get_move_dir() -> float:

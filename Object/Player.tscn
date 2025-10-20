@@ -703,6 +703,7 @@ jump_attack_state = NodePath("../JumpAttack")
 
 [node name="HurtBox" type="Area2D" parent="State Machine/Pain"]
 script = ExtResource("39_emg2k")
+player_path = NodePath("../../..")
 metadata/_custom_type_script = "uid://dmn0a1hn5i3bv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="State Machine/Pain/HurtBox"]
@@ -730,6 +731,7 @@ metadata/_custom_type_script = "uid://dxqxuq7qquk3l"
 position = Vector2(19, 1)
 shape = SubResource("RectangleShape2D_8amrj")
 disabled = true
+debug_color = Color(0.80563915, 0.0023703433, 0.99649006, 0.41960785)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("40_83teh")

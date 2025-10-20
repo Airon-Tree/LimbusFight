@@ -67,6 +67,9 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
+[node name="HurtBox" parent="State Machine/Pain" index="0"]
+player_path = NodePath("../../..")
+
 [node name="JumpAttack" parent="State Machine" index="7"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
