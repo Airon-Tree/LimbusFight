@@ -8,7 +8,7 @@ var _t: float = 0.0
 var has_attacked: bool
 
 @onready var hitbox: Area2D = $HitBox
-@onready var hitboxcollision: CollisionShape2D = $"../Punch/HitBox/CollisionShape2D"
+#@onready var hitboxcollision: CollisionShape2D = $"../Punch/HitBox/CollisionShape2D"
 
 func enter() -> void:
 	has_attacked = false
@@ -17,8 +17,8 @@ func enter() -> void:
 	if sprite_flipped: hitbox.scale.x = -1
 	else: hitbox.scale.x = 1
 	
-	player.sprite.play(jump_attack_anim)
-	hitboxcollision.set_deferred("disabled", false)
+	player.animation.play(jump_attack_anim)
+	#hitboxcollision.set_deferred("disabled", false)
 	#_set_hitbox_enabled(false)
 	await player.sprite.animation_finished
 	has_attacked = true
@@ -27,7 +27,7 @@ func exit(new_state: State = null) -> void:
 	super(new_state)
 	player.velocity.x =0.0
 	_set_hitbox_enabled(false)
-	hitboxcollision.set_deferred("disabled", true)
+	#hitboxcollision.set_deferred("disabled", true)
 
 
 func process_input(event: InputEvent) -> State:

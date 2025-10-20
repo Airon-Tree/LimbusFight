@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready var state_machine: StateMachine = $"State Machine"
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var animation: AnimationPlayer = $Animation
+
 
 func _ready():
 	state_machine.init()

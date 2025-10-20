@@ -18,7 +18,6 @@ var already_hit:= false
 
 
 func _on_area_entered(hit_box: HitBox) -> void:
-	print("hurt")
 	if hit_box == null: return
 	super(hit_box)
 	hit_box.owner.add_energy(10)

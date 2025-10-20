@@ -4,19 +4,19 @@ extends PlayerState
 var has_attacked: bool
 
 @onready var hitbox: Area2D = $HitBox
-@onready var hitboxcollision: CollisionShape2D = $HitBox/CollisionShape2D
+#@onready var hitboxcollision: CollisionShape2D = $HitBox/CollisionShape2D
 
 func enter() -> void:
 	has_attacked = false
 	if sprite_flipped: hitbox.scale.x = -1
 	else: hitbox.scale.x = 1
-	player.sprite.play(punch_anim)
-	hitboxcollision.set_deferred("disabled", false)
-	await player.sprite.animation_finished
+	player.animation.play(punch_anim)
+	#hitboxcollision.set_deferred("disabled", false)
+	await player.animation.animation_finished
 	has_attacked = true
 	
-func exit(new_state: State = null) -> void:
-	hitboxcollision.set_deferred("disabled", true)
+#func exit(new_state: State = null) -> void:
+	#hitboxcollision.set_deferred("disabled", true)
 
 func process_input(event: InputEvent) -> State:
 	super(event)
