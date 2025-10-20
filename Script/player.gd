@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 func _ready():
 	state_machine.init()
+	collision_layer = 2
 
 func _process(delta):
 	state_machine.process_frame(delta)

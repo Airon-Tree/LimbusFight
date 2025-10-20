@@ -52,9 +52,6 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
-[node name="HitBox" parent="State Machine/Kick" index="0"]
-collision_layer = 4
-
 [node name="Pain" parent="State Machine" index="5"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
@@ -72,9 +69,3 @@ jump_key = "Jump_p2"
 punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
-
-[node name="HitBox" parent="State Machine/JumpAttack" index="0"]
-collision_layer = 4
-
-[node name="HitBox" parent="State Machine/DiveKick" index="0"]
-collision_layer = 4
