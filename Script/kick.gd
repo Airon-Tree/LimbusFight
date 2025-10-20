@@ -9,8 +9,9 @@ func enter() -> void:
 	has_attacked = false
 	if sprite_flipped: hitbox.scale.x = -1
 	else: hitbox.scale.x = 1
-	player.animation.play(kick_anim)
-	player.animation.animation_finished.connect(func(_anim): has_attacked = true)
+	player.sprite.play(kick_anim)
+	await player.sprite.animation_finished
+	has_attacked = true
 
 func process_input(event: InputEvent) -> State:
 	super(event)

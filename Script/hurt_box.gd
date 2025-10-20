@@ -15,8 +15,6 @@ func _ready():
 	if player == null:
 		player = _find_player_root(self)
 	
-	collision_layer = 0
-	collision_mask = 2
 	area_entered.connect(_on_area_entered_bridge)
 	#self.area_entered.connect(on_area_entered)
 
@@ -32,7 +30,7 @@ func _find_attacker_root(from: Node) -> Node:
 		p = p.get_parent()
 	return p
 	
-func on_area_entered(hit_box: HitBox) -> void:
+func _on_area_entered(hit_box: HitBox) -> void:
 	if hit_box == null:
 		return
 		
@@ -59,7 +57,7 @@ func on_area_entered(hit_box: HitBox) -> void:
 
 func _on_area_entered_bridge(area: Area2D) -> void:
 	if area is HitBox:
-		on_area_entered(area as HitBox)
+		_on_area_entered(area as HitBox)
 
 
 func add_game_juice() -> void:

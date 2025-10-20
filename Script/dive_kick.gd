@@ -1,30 +1,26 @@
-class_name PlayerPunchState
+class_name PlayerDiveKickState
 extends PlayerState
 
 var has_attacked: bool
 
 @onready var hitbox: Area2D = $HitBox
-@onready var hitboxcollision: CollisionShape2D = $HitBox/CollisionShape2D
+
 
 func enter() -> void:
+	print("entering divekick")
 	has_attacked = false
 	if sprite_flipped: hitbox.scale.x = -1
 	else: hitbox.scale.x = 1
-	player.sprite.play(punch_anim)
-	hitboxcollision.set_deferred("disabled", false)
+	player.spend_energy(player.ult_cost)
+	player.sprite.play(dive_kick_anim)
 	await player.sprite.animation_finished
 	has_attacked = true
-	
-func exit(new_state: State = null) -> void:
-	hitboxcollision.set_deferred("disabled", true)
 
 func process_input(event: InputEvent) -> State:
 	super(event)
 	if has_attacked and event.is_action_pressed(movement_key):
 		determine_sprite_flipped(event.as_text())
 		return walk_state
-	elif has_attacked and event.is_action_pressed(jump_key):
-		return jump_state
 	return null
 
 func process_frame(delta: float) -> State:

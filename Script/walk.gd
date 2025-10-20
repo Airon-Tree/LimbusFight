@@ -5,7 +5,7 @@ const SPEED: float = 80
 
 func enter() -> void:
 	super()
-	player.animation.play(walk_anim, -1, 2)
+	player.sprite.play(walk_anim)
 	
 func exit(new_state: State = null) -> void:
 	super(new_state)

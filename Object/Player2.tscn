@@ -4,6 +4,9 @@
 
 [node name="Player" instance=ExtResource("1_0qk3f")]
 
+[node name="Sprite" parent="." index="0"]
+flip_h = true
+
 [node name="Idle" parent="State Machine" index="0"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
@@ -31,7 +34,7 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
-[node name="Fall" parent="State Machine" index="3"]
+[node name="Punch" parent="State Machine" index="3"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
 right_key = "Right_p2"
@@ -40,7 +43,7 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
-[node name="Punch" parent="State Machine" index="4"]
+[node name="Kick" parent="State Machine" index="4"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
 right_key = "Right_p2"
@@ -49,7 +52,10 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
-[node name="Kick" parent="State Machine" index="5"]
+[node name="HitBox" parent="State Machine/Kick" index="0"]
+collision_layer = 4
+
+[node name="Pain" parent="State Machine" index="5"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
 right_key = "Right_p2"
@@ -58,7 +64,7 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
-[node name="Pain" parent="State Machine" index="6"]
+[node name="JumpAttack" parent="State Machine" index="6"]
 movement_key = "Movement_p2"
 left_key = "Left_p2"
 right_key = "Right_p2"
@@ -67,14 +73,8 @@ punch_key = "Punch_p2"
 kick_key = "Kick_p2"
 jump_attack_key = "Kick_p2"
 
-[node name="HurtBox" parent="State Machine/Pain" index="0"]
-player_path = NodePath("../../..")
+[node name="HitBox" parent="State Machine/JumpAttack" index="0"]
+collision_layer = 4
 
-[node name="JumpAttack" parent="State Machine" index="7"]
-movement_key = "Movement_p2"
-left_key = "Left_p2"
-right_key = "Right_p2"
-jump_key = "Jump_p2"
-punch_key = "Punch_p2"
-kick_key = "Kick_p2"
-jump_attack_key = "Kick_p2"
+[node name="HitBox" parent="State Machine/DiveKick" index="0"]
+collision_layer = 4

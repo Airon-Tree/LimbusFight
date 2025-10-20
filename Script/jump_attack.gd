@@ -16,9 +16,10 @@ func enter() -> void:
 	if sprite_flipped: hitbox.scale.x = -1
 	else: hitbox.scale.x = 1
 	
-	player.animation.play(jump_attack_anim)
+	player.sprite.play(jump_attack_anim)
 	#_set_hitbox_enabled(false)
-	player.animation.animation_finished.connect(func(_anim): has_attacked = true)
+	await player.sprite.animation_finished
+	has_attacked = true
 
 func exit(new_state: State = null) -> void:
 	super(new_state)
@@ -34,8 +35,6 @@ func process_input(event: InputEvent) -> State:
 
 func process_physics(delta: float) -> State:
 	
-	if has_attacked:
-		return fall_state
 
 	do_move(get_move_dir())
 	if(player.is_on_floor()):
@@ -50,8 +49,6 @@ func process_physics(delta: float) -> State:
 	
 func process_frame(delta: float) -> State:
 	super(delta)
-	if has_attacked:
-		return fall_state
 	return null
 
 func get_move_dir() -> float:

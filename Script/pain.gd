@@ -12,8 +12,10 @@ var has_pained: bool
 func enter() -> void:
 	has_pained = false
 	_applied_kb = false
-	player.animation.play(pain_anim)
-	player.animation.animation_finished.connect(func(_anim): has_pained = true)
+	player.sprite.play(pain_anim)
+	player.sprite.animation_finished
+	has_pained = true
+	player.add_energy(5)
 
 func exit(new_state: State = null) -> void:
 	super(new_state)

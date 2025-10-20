@@ -10,22 +10,22 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity", -
 var idle_anim: String = "Idle"
 var walk_anim: String = "Walk"
 var jump_anim: String = "Jump"
-var fall_anim: String = "Fall"
 var punch_anim: String = "Punch"
 var kick_anim: String = "Kick"
 var pain_anim: String = "Pain"
 var jump_attack_anim: String = "Jump_Attack"
+var dive_kick_anim: String = "Dive_Kick"
 
 #States
 @export_group("States")
 @export var idle_state: PlayerState
 @export var walk_state: PlayerState
 @export var jump_state: PlayerState
-@export var fall_state: PlayerState
 @export var punch_state: PlayerState
 @export var kick_state: PlayerState
 @export var pain_state: PlayerState
 @export var jump_attack_state: PlayerState
+@export var dive_kick_state: PlayerState
 
 #State Variables
 var sprite_flipped: bool = false
@@ -79,8 +79,6 @@ func determine_sprite_flipped(event_text: String) -> void:
 func process_physics(delta: float) -> State:
 	player.velocity.y += gravity * delta
 	player.move_and_slide()
-	if(player.velocity.y > 0.0 and not player.is_on_floor()):
-		return fall_state
 	return null
 	
 func exit(new_state: State = null) -> void:
